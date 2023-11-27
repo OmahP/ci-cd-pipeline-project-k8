@@ -8,7 +8,7 @@ terraform {
     region         = "us-east-2"
 
     # Replace this with your DynamoDB table name!
-    dynamodb_table = "jjtech-dynamodb"
+    dynamodb_table = "jjtechdynamodb"
   }
   
   required_providers {

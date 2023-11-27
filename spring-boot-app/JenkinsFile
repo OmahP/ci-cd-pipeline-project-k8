@@ -16,7 +16,7 @@ pipeline {
     stage('Git Checkout') {
       steps {
         echo 'Cloning the application code...'
-        git branch: 'main', url: 'https://github.com/anselmenumbisia/jjtech-ci-cd-pipeline-project-k8s.git'
+        git branch: 'main', url: 'https://github.com/OmahP/ci-cd-pipeline-project-k8.git'
       }
     }
 
@@ -113,8 +113,8 @@ pipeline {
 
     stage('Build and Push Docker Image') {
       environment {
-        awsAccountId = '389029577690'
-        region = 'us-east-1'
+        awsAccountId = '760195545257'
+        region = 'us-east-2'
         repositoryName = 'jjtech-demo'
         dockerImageTag = "${BUILD_NUMBER}"
         ecrRegistry = "${awsAccountId}.dkr.ecr.${region}.amazonaws.com"
@@ -156,7 +156,7 @@ pipeline {
 
     stage("Deploy to EKS"){
         environment {
-        region = 'us-east-1'
+        region = 'us-east-2'
         clusterName = 'jjtech-demo-cluster'
       }       
         steps {  
